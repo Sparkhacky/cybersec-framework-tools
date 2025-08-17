@@ -1,0 +1,188 @@
+[
+  {
+    "name": "Nmap",
+    "description": "Escáner de puertos y servicios. Reconocimiento de red profundo.",
+    "repo": "https://github.com/nmap/nmap",
+    "categories": [
+      "Reconocimiento",
+      "Redes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "port-scanner",
+      "enumeration"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "sqlmap",
+    "description": "Automatiza inyección SQL y toma de control de DBs.",
+    "repo": "https://github.com/sqlmapproject/sqlmap",
+    "categories": [
+      "Hacking Web",
+      "Explotación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "sqli",
+      "db",
+      "pentest"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Responder",
+    "description": "Envenenamiento LLMNR/NBT-NS/MDNS para robar hashes y credenciales.",
+    "repo": "https://github.com/lgandx/Responder",
+    "categories": [
+      "Movimiento Lateral",
+      "Red Team",
+      "Explotación"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "llmnr",
+      "ntlm",
+      "hashes"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "LinPEAS",
+    "description": "Enumeración para elevación de privilegios en Linux.",
+    "repo": "https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS",
+    "categories": [
+      "Elevación de Privilegios",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "privesc",
+      "enumeration"
+    ],
+    "language": "Shell"
+  },
+  {
+    "name": "WinPEAS",
+    "description": "Enumeración para elevación de privilegios en Windows.",
+    "repo": "https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS",
+    "categories": [
+      "Elevación de Privilegios",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "privesc",
+      "enumeration"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "Evilginx2",
+    "description": "Framework de phishing con proxies inversos para capturar cookies de sesión.",
+    "repo": "https://github.com/kgretzky/evilginx2",
+    "categories": [
+      "Phishing",
+      "Ingeniería Social"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "adversary-in-the-middle",
+      "2fa-bypass"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Ghidra",
+    "description": "Suite de ingeniería inversa desarrollada por NSA.",
+    "repo": "https://github.com/NationalSecurityAgency/ghidra",
+    "categories": [
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "reverse",
+      "malware-analysis"
+    ],
+    "language": "Java"
+  },
+  {
+    "name": "BloodHound",
+    "description": "Descubre y visualiza relaciones en AD para rutas de ataque.",
+    "repo": "https://github.com/BloodHoundAD/BloodHound",
+    "categories": [
+      "Active Directory",
+      "Movimiento Lateral",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux",
+      "macOS"
+    ],
+    "tags": [
+      "ad",
+      "graph",
+      "paths"
+    ],
+    "language": "TypeScript"
+  },
+  {
+    "name": "John the Ripper",
+    "description": "Cracking de contraseñas multi-OS.",
+    "repo": "https://github.com/openwall/john",
+    "categories": [
+      "Cracking",
+      "Análisis"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "password",
+      "hash"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Hashcat",
+    "description": "Cracking avanzado de hashes con GPU.",
+    "repo": "https://github.com/hashcat/hashcat",
+    "categories": [
+      "Cracking"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "gpu",
+      "password"
+    ],
+    "language": "C"
+  }
+]
