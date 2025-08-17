@@ -1,31 +1,28 @@
+# 🛡️ Índice de Herramientas de Ciberseguridad
 
-# Índice de Herramientas de Ciberseguridad (GitHub Pages)
+Bienvenido al **Índice de Herramientas de Ciberseguridad**:  
+una web sencilla y práctica que reúne en un solo lugar los principales repositorios de GitHub relacionados con el hacking ético, el pentesting y la ciberseguridad.
 
-Sitio **estático** listo para publicar en GitHub Pages: buscador y filtros por categorías para enlaces a repositorios de ciberseguridad.
+---
 
-## Cómo usar
+## ✨ ¿Qué encontrarás aquí?
 
-1. Crea un repositorio en GitHub, por ejemplo `cybersec-tools-index`.
-2. Sube estos archivos a la raíz (`index.html`, `styles.css`, `app.js`, `repos.json`).
-3. Activa **GitHub Pages** (Settings → Pages → _Deploy from a branch_ → `main` / `/root`).  
-4. Abre la URL pública que te da GitHub Pages.
+- 🔍 **Buscador en tiempo real**: escribe el nombre de una herramienta o palabra clave.  
+- 🗂️ **Filtros por categorías**: encuentra lo que buscas (Web Hacking, PrivEsc, Phishing, Movimiento Lateral, Active Directory, Cracking, Reversing, etc.).  
+- ↕️ **Opciones de ordenado**: organiza los resultados por nombre o lenguaje.  
+- ⚡ **Acceso directo**: cada tarjeta enlaza al repositorio oficial en GitHub.  
 
-## Añadir/editar herramientas
+---
 
-Edita `repos.json` y añade objetos con este esquema:
+## 🚀 ¿Para qué sirve?
 
-```json
-{
-  "name": "Nombre",
-  "description": "Descripción corta",
-  "repo": "https://github.com/usuario/proyecto",
-  "categories": ["Hacking Web", "Reconocimiento"],
-  "platforms": ["Linux", "Windows"],
-  "tags": ["sqli", "scanner"],
-  "language": "Python"
-}
-```
+Este índice está pensado para estudiantes, investigadores y profesionales de la seguridad informática que necesitan:  
 
-No hay backend ni librerías: **solo HTML/CSS/JS**. Rápido, minimalista y fácil de mantener.
+- Localizar una herramienta rápidamente sin perder tiempo buscando en múltiples repositorios.  
+- Tener un catálogo organizado por categorías.  
+- Explorar nuevas utilidades y frameworks de la comunidad de ciberseguridad.  
 
-> Recuerda actuar conforme a la ley y la ética profesional. Usa las herramientas con permiso explícito.
+---
+
+## 🌍 Acceso a la web
+
