@@ -426,5 +426,204 @@
       "coercion"
     ],
     "language": "C"
+  },
+  {
+    "name": "Volatility3",
+    "description": "Framework avanzado de análisis de memoria RAM para investigación forense y respuesta a incidentes.",
+    "repo": "https://github.com/volatilityfoundation/volatility3",
+    "categories": [
+      "Análisis",
+      "Forense"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "memory",
+      "forensics",
+      "incident-response"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "YARA",
+    "description": "Lenguaje de reglas para identificar malware mediante patrones.",
+    "repo": "https://github.com/VirusTotal/yara",
+    "categories": [
+      "Análisis",
+      "Malware"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "malware",
+      "rules",
+      "detection"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Cuckoo Sandbox",
+    "description": "Sandbox automatizado para análisis de malware.",
+    "repo": "https://github.com/cuckoosandbox/cuckoo",
+    "categories": [
+      "Análisis",
+      "Malware",
+      "Automatización"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "sandbox",
+      "malware-analysis",
+      "automation"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Radare2",
+    "description": "Framework de reversing y análisis binario.",
+    "repo": "https://github.com/radareorg/radare2",
+    "categories": [
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "reverse",
+      "binary",
+      "debug"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "apktool",
+    "description": "Herramienta para ingeniería inversa de aplicaciones Android (APK).",
+    "repo": "https://github.com/iBotPeaches/Apktool",
+    "categories": [
+      "Análisis",
+      "Reversing",
+      "Android"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "android",
+      "reverse",
+      "apk"
+    ],
+    "language": "Java"
+  },
+  {
+    "name": "Binwalk",
+    "description": "Análisis y extracción de firmware e imágenes binarias.",
+    "repo": "https://github.com/ReFirmLabs/binwalk",
+    "categories": [
+      "Análisis",
+      "Reversing",
+      "Firmware"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "firmware",
+      "reverse",
+      "iot"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Wireshark",
+    "description": "Analizador de tráfico de red multiplataforma.",
+    "repo": "https://gitlab.com/wireshark/wireshark",
+    "categories": [
+      "Análisis",
+      "Redes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "network",
+      "packet",
+      "sniffer"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "NetworkMiner",
+    "description": "Herramienta de análisis forense de red (NFAT) para extracción de archivos y credenciales.",
+    "repo": "https://www.netresec.com/?page=NetworkMiner",
+    "categories": [
+      "Análisis",
+      "Forense",
+      "Redes"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "tags": [
+      "network",
+      "forensics",
+      "pcap"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "MISP",
+    "description": "Malware Information Sharing Platform: compartición de IoCs y threat intelligence.",
+    "repo": "https://github.com/MISP/MISP",
+    "categories": [
+      "Análisis",
+      "Threat Intelligence"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "ioc",
+      "threat-intel",
+      "sharing"
+    ],
+    "language": "PHP"
+  },
+  {
+    "name": "OSQuery",
+    "description": "Plataforma para explorar el estado del sistema operativo con consultas SQL.",
+    "repo": "https://github.com/osquery/osquery",
+    "categories": [
+      "Análisis",
+      "Monitoreo"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "sql",
+      "monitoring",
+      "incident-response"
+    ],
+    "language": "C++"
   }
 ]
