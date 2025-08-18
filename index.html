@@ -3,22 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberSec - Framework</title>
+  <title>Índice de Herramientas de Ciberseguridad</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="container">
     <h1>Índice de Herramientas de Ciberseguridad</h1>
     <p class="subtitle">Encuentra rápido. Filtra suave. ⚖️</p>
+
     <div class="controls">
-      <input id="search" type="search" placeholder="Buscar: nmap, phishing, privilege escalation..." aria-label="Buscar"/>
-      <select id="sort">
+      <!-- Buscador con autocompletado -->
+      <input id="search" type="search" list="search-suggest"
+             placeholder="Buscar: nmap, phishing, privilege escalation..."
+             aria-label="Buscar"/>
+      <datalist id="search-suggest"></datalist>
+
+      <!-- Orden -->
+      <select id="sort" aria-label="Ordenar">
         <option value="name-asc">Ordenar: Nombre (A→Z)</option>
         <option value="name-desc">Ordenar: Nombre (Z→A)</option>
         <option value="lang-asc">Lenguaje (A→Z)</option>
       </select>
+
+      <!-- Solo favoritos -->
+      <label class="switch" title="Mostrar solo favoritos">
+        <input type="checkbox" id="onlyFavs" />
+        <span>Solo favoritos ⭐</span>
+      </label>
+
+      <!-- Vista tarjetas / lista -->
+      <div class="view-toggle" role="group" aria-label="Cambiar vista">
+        <button id="viewCards" class="is-active" type="button">Tarjetas</button>
+        <button id="viewList" type="button">Lista</button>
+      </div>
+
+      <!-- Limpiar -->
       <button id="clearFilters" title="Limpiar filtros">Limpiar</button>
     </div>
+
+    <!-- Chips (27 macros) -->
     <div id="filters" class="filters"></div>
   </header>
 
@@ -29,9 +52,13 @@
 
   <footer class="container footer">
     <p>Hecho con ☯︎ — Mantén el equilibrio entre conocimiento y ética.</p>
-    <p><a href="repos.json" target="_blank" rel="noopener">Ver datos (repos.json)</a> · <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
+    <p>
+      <a href="repos.json" target="_blank" rel="noopener">Ver datos (repos.json)</a> ·
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </p>
   </footer>
 
-  <script src="app.js?v=2"></script>
+  <!-- Usa el app.js con macros + favoritos + lista que te pasé -->
+  <script src="app.js?v=3"></script>
 </body>
 </html>
