@@ -220,22 +220,25 @@ function card(item){
 function renderTable(list){
   const rows = list.map(it=>`
     <tr>
-      <td style="white-space:nowrap">${favStar(it.repo)}</td>
-      <td><a href="${it.repo}" target="_blank" rel="noopener">${escapeHtml(it.name)}</a></td>
-      <td>${escapeHtml(it.description||"")}</td>
-      <td>${(it.macros||[]).map(m=>`<span class="badge">${escapeHtml(m.name)}</span>`).join("")}</td>
+      <td class="col-star" style="white-space:nowrap">${favStar(it.repo)}</td>
+      <td class="col-name"><a href="${it.repo}" target="_blank" rel="noopener">${escapeHtml(it.name)}</a></td>
+      <td class="col-desc">${escapeHtml(it.description||"")}</td>
+      <td class="col-macros">${(it.macros||[]).map(m=>`<span class="badge">${escapeHtml(m.name)}</span>`).join("")}</td>
     </tr>
   `).join("");
 
   return `
-    <table class="table">
-      <thead>
-        <tr><th></th><th>Herramienta</th><th>Descripción</th><th>Macros</th></tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr><th class="col-star"></th><th class="col-name">Herramienta</th><th class="col-desc">Descripción</th><th class="col-macros">Macros</th></tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
   `;
 }
+
 
 // ====== Controles ======
 document.addEventListener("DOMContentLoaded", () => {
