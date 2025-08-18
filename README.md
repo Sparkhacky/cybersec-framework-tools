@@ -1,28 +1,69 @@
-# 🛡️ Índice de Herramientas de Ciberseguridad
+🛡️ CyberSec Framework Tools
 
-Bienvenido al **Índice de Herramientas de Ciberseguridad**:  
-una web sencilla y práctica que reúne en un solo lugar los principales repositorios de GitHub relacionados con el hacking ético, el pentesting y la ciberseguridad.
+Bienvenido a CyberSec Framework Tools, un proyecto abierto que recopila, organiza y centraliza las principales herramientas de ciberseguridad y hacking ético, clasificadas por categorías.
 
----
+Su objetivo es servir como un índice práctico para profesionales, estudiantes e investigadores que buscan ahorrar tiempo encontrando las herramientas adecuadas sin tener que navegar por cientos de repositorios dispersos.
 
-## ✨ ¿Qué encontrarás aquí?
+🔍 ¿Qué encontrarás aquí?
 
-- 🔍 **Buscador en tiempo real**: escribe el nombre de una herramienta o palabra clave.  
-- 🗂️ **Filtros por categorías**: encuentra lo que buscas (Web Hacking, PrivEsc, Phishing, Movimiento Lateral, Active Directory, Cracking, Reversing, etc.).  
-- ↕️ **Opciones de ordenado**: organiza los resultados por nombre o lenguaje.  
-- ⚡ **Acceso directo**: cada tarjeta enlaza al repositorio oficial en GitHub.  
+Un catálogo estructurado de más de 200 herramientas, clasificadas en bloques como:
 
----
+🏢 Active Directory – auditoría, explotación y hardening
 
-## 🚀 ¿Para qué sirve?
+📊 Análisis – herramientas para inspección y diagnóstico
 
-Este índice está pensado para estudiantes, investigadores y profesionales de la seguridad informática que necesitan:  
+📱 Android & Mobile – seguridad en aplicaciones móviles
 
-- Localizar una herramienta rápidamente sin perder tiempo buscando en múltiples repositorios.  
-- Tener un catálogo organizado por categorías.  
-- Explorar nuevas utilidades y frameworks de la comunidad de ciberseguridad.  
+🔑 Ataques de Autenticación – cracking y bypass de credenciales
 
----
+🛡️ Auditoría & Red Team – suites de seguridad ofensiva y defensiva
 
-## 🌍 Acceso a la web
+⚙️ Automatización – frameworks para agilizar procesos
 
+💻 Cracking & Explotación – explotación de vulnerabilidades
+
+🚀 Elevación de Privilegios & Movimientos Laterales
+
+🌐 Hacking Web & Redes
+
+🕵️ Ingeniería Social & OSINT
+
+🧩 Malware, Reversing & Forense
+
+🛰️ Threat Intelligence – inteligencia de amenazas, CTI, IoCs
+
+Y muchos más…
+
+🧭 Cómo usarlo
+
+Accede a la web alojada en GitHub Pages:
+👉 CyberSec Framework Tools
+
+Filtra por categoría lo que necesites:
+
+¿Buscas herramientas de explotación? → Filtra “Explotación”.
+
+¿Quieres frameworks de Threat Intelligence? → Filtra “Threat Intelligence”.
+
+Haz clic en el nombre de la herramienta para ir directamente al repositorio oficial.
+
+🤝 Contribuciones
+
+Este proyecto es colaborativo.
+Si conoces una herramienta que no aparece aquí:
+
+Haz un fork del repositorio.
+
+Añade la herramienta en el JSON correspondiente.
+
+Abre un Pull Request con la propuesta.
+
+Toda ayuda es bienvenida 💙
+
+⚠️ Aviso
+
+Este repositorio es solo con fines educativos y de investigación.
+El uso indebido de estas herramientas fuera de un entorno controlado y legal puede ser ilegal.
+El autor no se responsabiliza del mal uso.
+
+✨ Con esta iniciativa queremos construir un mapa centralizado de herramientas de ciberseguridad para que tu tiempo se enfoque en lo importante: aprender, investigar y proteger.
