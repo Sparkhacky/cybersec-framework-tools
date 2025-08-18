@@ -134,3 +134,47 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Panel plegable de filtros */
+.filters-panel { margin:.5rem 0 1rem; }
+.filters-panel > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap:.5rem;
+  padding:.55rem .8rem;
+  border:1px solid var(--ring);
+  border-radius:.8rem;
+  background: var(--card);
+  color: var(--text);
+}
+.filters-panel > summary::-webkit-details-marker { display:none; }
+.filters-panel[open] > summary { border-color: var(--accent); box-shadow:0 0 0 2px rgba(103,232,249,.12) inset;}
+
+/* En escritorio, que salga abierto por defecto (lo hace JS, esto es visual) */
+@media (min-width: 900px){
+  .filters-panel { margin-bottom:1.2rem; }
+}
+
+/* Ajustes móviles: chips más pequeños y menos padding */
+@media (max-width: 600px){
+  h1 { font-size:1.35rem; }
+  .subtitle { font-size:.95rem; }
+  .controls { gap:.5rem; }
+  .controls input[type="search"] { padding:.5rem .7rem; }
+  .controls select, .controls button, .view-toggle button { padding:.5rem .7rem; }
+  .filter-chip { padding:.28rem .5rem; }
+  .filter-chip span { font-size:.9rem; }
+  .badge { font-size:.7rem; padding:.18rem .4rem; }
+  .grid { gap:10px; }
+}
+
+/* Vista lista: ocupar todo el ancho */
+.grid.list { display:block; }
+
+/* Enlaces bonitos (evita azul por defecto) */
+a { color: var(--text); text-decoration: none; font-weight: 500; }
+a:hover { color: var(--accent); text-decoration: underline; }
+
+
