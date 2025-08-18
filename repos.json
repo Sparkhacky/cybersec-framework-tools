@@ -184,5 +184,247 @@
       "password"
     ],
     "language": "C"
+  },
+  {
+    "name": "Impacket",
+    "description": "Colección de scripts y librerías para SMB, LDAP y Kerberos. Base para muchos ataques/pruebas en AD.",
+    "repo": "https://github.com/fortra/impacket",
+    "categories": [
+      "Active Directory",
+      "Post-Explotación",
+      "Movimiento Lateral"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "smb",
+      "kerberos",
+      "ldap",
+      "dcsync",
+      "pth",
+      "relay"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "CrackMapExec",
+    "description": "Herramienta integral para AD: enumeración, ejecución remota, password spraying y más.",
+    "repo": "https://github.com/Porchetta-Industries/CrackMapExec",
+    "categories": [
+      "Active Directory",
+      "Movimiento Lateral",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "smb",
+      "winrm",
+      "ldap",
+      "exec",
+      "psexec"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Rubeus",
+    "description": "Suite Kerberos para Windows: AS-REP/kerberoast, ticket management, S4U.",
+    "repo": "https://github.com/GhostPack/Rubeus",
+    "categories": [
+      "Active Directory",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "kerberos",
+      "kerberoast",
+      "asreproast",
+      "tickets",
+      "s4u"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "PowerView (PowerSploit)",
+    "description": "Módulos PowerShell para enumeración y abuso de AD: trusts, GPOs, ACLs, sesiones.",
+    "repo": "https://github.com/PowerShellMafia/PowerSploit",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "powershell",
+      "ad",
+      "enumeration",
+      "acl"
+    ],
+    "language": "PowerShell"
+  },
+  {
+    "name": "Kerbrute",
+    "description": "Descubrimiento de usuarios y password spraying mediante Kerberos.",
+    "repo": "https://github.com/ropnop/kerbrute",
+    "categories": [
+      "Active Directory",
+      "Ataques de Autenticación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "kerberos",
+      "user-enum",
+      "spray"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "ldapdomaindump",
+    "description": "Dumpeo de información de dominio vía LDAP con salida HTML/JSON.",
+    "repo": "https://github.com/dirkjanm/ldapdomaindump",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "ldap",
+      "enumeration",
+      "report"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "ADRecon",
+    "description": "Recolecta información de AD y genera informe consolidado para evaluación de seguridad.",
+    "repo": "https://github.com/adrecon/ADRecon",
+    "categories": [
+      "Active Directory",
+      "Análisis",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "report",
+      "inventory",
+      "auditing"
+    ],
+    "language": "PowerShell"
+  },
+  {
+    "name": "SharpHound",
+    "description": "Recolector de datos para BloodHound desde sistemas Windows.",
+    "repo": "https://github.com/BloodHoundAD/SharpHound",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "bloodhound",
+      "collector",
+      "graph"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "BloodHound.py",
+    "description": "Recolector de datos compatible con BloodHound desde Linux/macOS.",
+    "repo": "https://github.com/fox-it/BloodHound.py",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Linux",
+      "macOS"
+    ],
+    "tags": [
+      "bloodhound",
+      "collector",
+      "ldap"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Certipy",
+    "description": "Abuso de Active Directory Certificate Services (AD CS): enumeración y explotación.",
+    "repo": "https://github.com/ly4k/Certipy",
+    "categories": [
+      "Active Directory",
+      "Explotación",
+      "Persistencia"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "adcs",
+      "certificates",
+      "escalation",
+      "persistence"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Certify",
+    "description": "Enumeración y abuso de AD CS desde Windows.",
+    "repo": "https://github.com/GhostPack/Certify",
+    "categories": [
+      "Active Directory",
+      "Explotación",
+      "Persistencia"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "adcs",
+      "certificates",
+      "abuse"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "PetitPotam",
+    "description": "Coerción EFSRPC para ataques NTLM relay en ciertos entornos de AD.",
+    "repo": "https://github.com/topotam/PetitPotam",
+    "categories": [
+      "Active Directory",
+      "Ataques de Autenticación"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "tags": [
+      "ntlm",
+      "relay",
+      "coercion"
+    ],
+    "language": "C"
   }
 ]
