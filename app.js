@@ -13,6 +13,8 @@ const $ = (sel) => document.querySelector(sel);
 const grid = $("#grid");
 const filtersBox = $("#filters");
 const stats = $("#stats");
+const filtersPanel = $("#filtersPanel");
+const filtersSummary = $("#filtersSummary");
 
 // ====== Macros EXACTAS ======
 const MACROS = [
@@ -85,10 +87,17 @@ async function loadData() {
   state.items = data.map(t => ({ ...t, macros: mapToMacros(t) }));
   renderFilters();
   buildAutocomplete();  // datalist
+  // Panel abierto en escritorio, plegado en móvil
+  if (filtersPanel) filtersPanel.open = window.innerWidth >= 900;
   render();
 }
 
-// ====== Filtros (solo macros) ======
+// ====== Panel de filtros ======
+function updateFiltersSummary(){
+  const n = state.activeMacros.size;
+  if (filtersSummary) filtersSummary.textContent = `Filtros (${n} activo${n===1?"":"s"})`;
+}
+
 function renderFilters() {
   filtersBox.innerHTML = MACROS.map(m => {
     const id = `macro-${m.id}`;
@@ -104,9 +113,18 @@ function renderFilters() {
       const id = e.target.getAttribute("data-macro");
       if (e.target.checked) state.activeMacros.add(id);
       else state.activeMacros.delete(id);
+      updateFiltersSummary();
       render();
+
+      // En móvil, cerrar panel tras seleccionar para no tapar resultados
+      if (window.innerWidth < 700 && filtersPanel?.open) {
+        filtersPanel.open = false;
+        $("#stats")?.scrollIntoView({behavior:"smooth", block:"start"});
+      }
     });
   });
+
+  updateFiltersSummary();
 }
 
 // ====== Autocompletado (datalist) ======
@@ -235,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#sort") && ($("#sort").value = "name-asc");
     $("#onlyFavs") && ($("#onlyFavs").checked = false);
     renderFilters();
+    if (filtersPanel) filtersPanel.open = window.innerWidth >= 900;
     render();
   });
 
