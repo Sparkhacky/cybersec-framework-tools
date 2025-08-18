@@ -4,6 +4,9 @@ const state = {
   search: "",
   sort: "name-asc",
   activeMacros: new Set(),
+  view: "cards",          // 'cards' | 'list'
+  favs: new Set(),        // repos favoritos (key = repo URL)
+  onlyFavs: false,
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -11,7 +14,7 @@ const grid = $("#grid");
 const filtersBox = $("#filters");
 const stats = $("#stats");
 
-// ====== Macros EXACTAS que pediste ======
+// ====== Macros EXACTAS ======
 const MACROS = [
   { id: "active-directory", name: "Active Directory", match: /(active\s*directory|bloodhound|sharp(hound)?|winrm|ldap|kerberoast|asreproast|certi(fy|py)|ad\s*cs|gpo|dcsync|impacket)/i },
   { id: "reconocimiento", name: "Reconocimiento", match: /(recon\b|theharvester|recon-ng|aquatone|httprobe|amass|masscan(?!.*wpa)|sub(list3r|finder)|screenshots?|fingerprint)/i },
@@ -42,7 +45,6 @@ const MACROS = [
   { id: "monitoreo", name: "monitoreo", match: /(prometheus|grafana|wazuh|nagios|zabbix|netdata|glances|elk|elastic\s*stack|sysdig|osquery)/i },
 ];
 
-// Mapeo de una herramienta a 0..n macros
 function mapToMacros(tool) {
   const haystack = [
     ...(tool.categories || []),
@@ -50,23 +52,44 @@ function mapToMacros(tool) {
     tool.name || "",
     tool.description || "",
   ].join(" | ").toLowerCase();
-
   return MACROS.filter(m => m.match.test(haystack));
+}
+
+function escapeHtml(str){
+  return (str||"").replace(/[&<>"']/g, s => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  })[s]);
+}
+
+// ====== Favoritos (localStorage) ======
+const FAV_KEY = "cft:favs";
+function loadFavs(){
+  try { state.favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]")); }
+  catch { state.favs = new Set(); }
+}
+function saveFavs(){
+  localStorage.setItem(FAV_KEY, JSON.stringify([...state.favs]));
+}
+function toggleFav(repo){
+  if (state.favs.has(repo)) state.favs.delete(repo);
+  else state.favs.add(repo);
+  saveFavs();
+  render(); // refresca íconos/filtrado
 }
 
 // ====== Carga de datos ======
 async function loadData() {
+  loadFavs();
   const res = await fetch("repos.json?v=now");
   const data = await res.json();
-
   state.items = data.map(t => ({ ...t, macros: mapToMacros(t) }));
   renderFilters();
+  buildAutocomplete();  // datalist
   render();
 }
 
 // ====== Filtros (solo macros) ======
 function renderFilters() {
-  // pinta SOLO los 27 chips definidos en MACROS (en orden)
   filtersBox.innerHTML = MACROS.map(m => {
     const id = `macro-${m.id}`;
     const checked = state.activeMacros.has(m.id) ? "checked" : "";
@@ -76,7 +99,6 @@ function renderFilters() {
     </label>`;
   }).join("");
 
-  // listeners
   filtersBox.querySelectorAll("input[type=checkbox]").forEach(cb => {
     cb.addEventListener("change", (e) => {
       const id = e.target.getAttribute("data-macro");
@@ -87,9 +109,25 @@ function renderFilters() {
   });
 }
 
+// ====== Autocompletado (datalist) ======
+function buildAutocomplete(){
+  const dl = $("#search-suggest");
+  if (!dl) return;
+  const names = state.items.map(i=>i.name);
+  const macros = MACROS.map(m=>m.name);
+  const tags = [...new Set(state.items.flatMap(i=>i.tags||[]))].slice(0,200);
+  const opts = [...new Set([...names, ...macros, ...tags])].sort((a,b)=>a.localeCompare(b));
+  dl.innerHTML = opts.map(v=>`<option value="${escapeHtml(v)}">`).join("");
+}
+
 // ====== Filtro, búsqueda y orden ======
 function applyFilters(items) {
   let out = items;
+
+  // Solo favoritos
+  if (state.onlyFavs) {
+    out = out.filter(it => state.favs.has(it.repo));
+  }
 
   // por macros (OR). Si no hay activos, no filtra por macro.
   if (state.activeMacros.size > 0) {
@@ -103,7 +141,7 @@ function applyFilters(items) {
   if (state.search.trim() !== "") {
     const q = state.search.toLowerCase();
     out = out.filter(it => {
-      const base = `${it.name||""} ${it.description||""} ${(it.tags||[]).join(" ")} ${(it.categories||[]).join(" ")}`.toLowerCase();
+      const base = `${it.name||""} ${it.description||""} ${(it.tags||[]).join(" ")} ${(it.categories||[]).join(" ")} ${(it.macros||[]).map(m=>m.name).join(" ")}`.toLowerCase();
       return base.includes(q);
     });
   }
@@ -122,57 +160,109 @@ function applyFilters(items) {
   return out;
 }
 
-// ====== Render de tarjetas ======
+// ====== Render ======
 function render() {
   const filtered = applyFilters(state.items);
   if (stats) stats.textContent = `Mostrando ${filtered.length} de ${state.items.length} repositorios`;
 
-  grid.innerHTML = filtered.map(item => card(item)).join("");
+  grid.innerHTML = (state.view === "cards")
+    ? filtered.map(item => card(item)).join("")
+    : renderTable(filtered);
+}
+
+function favStar(repo){
+  const on = state.favs.has(repo);
+  const title = on ? "Quitar de favoritos" : "Añadir a favoritos";
+  return `<button class="star" title="${title}" data-fav="${repo}" aria-label="${title}">
+    ${on ? "⭐" : "☆"}
+  </button>`;
 }
 
 function card(item){
-  const badges = (item.macros || []).map(m=>`<span class="badge">${escapeHtml(m.name)}</span>`).join("");
+  const macros = (item.macros || []).map(m=>`<span class="badge">${escapeHtml(m.name)}</span>`).join("");
   const lang = item.language ? `<span class="badge">${escapeHtml(item.language)}</span>` : "";
   const plats = (item.platforms||[]).map(t=>`<span class="badge">${escapeHtml(t)}</span>`).join("");
-
   return `<article class="card">
     <div class="row">
       <h3>${escapeHtml(item.name)}</h3>
-      <a class="button" href="${item.repo}" target="_blank" rel="noopener">Repo</a>
+      <div class="row">
+        <a class="button" href="${item.repo}" target="_blank" rel="noopener">Repo</a>
+        ${favStar(item.repo)}
+      </div>
     </div>
     <p>${escapeHtml(item.description||"")}</p>
-    <div class="badges">${badges}</div>
+    <div class="badges">${macros}</div>
     <div class="badges">${plats} ${lang}</div>
   </article>`;
 }
 
-function escapeHtml(str){
-  return (str||"").replace(/[&<>"']/g, s => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
-  })[s]);
+function renderTable(list){
+  const rows = list.map(it=>`
+    <tr>
+      <td style="white-space:nowrap">${favStar(it.repo)}</td>
+      <td><a href="${it.repo}" target="_blank" rel="noopener">${escapeHtml(it.name)}</a></td>
+      <td>${escapeHtml(it.description||"")}</td>
+      <td>${(it.macros||[]).map(m=>`<span class="badge">${escapeHtml(m.name)}</span>`).join("")}</td>
+    </tr>
+  `).join("");
+
+  // delegación de eventos para estrellas en tabla
+  setTimeout(bindStarHandlers, 0);
+
+  return `
+    <table class="table">
+      <thead>
+        <tr><th></th><th>Herramienta</th><th>Descripción</th><th>Macros</th></tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+// ====== Eventos para estrellas (tarjeta y tabla) ======
+function bindStarHandlers(){
+  document.querySelectorAll('button.star[data-fav]').forEach(btn=>{
+    btn.onclick = (e)=>{
+      const repo = e.currentTarget.getAttribute('data-fav');
+      toggleFav(repo);
+    };
+  });
 }
 
 // ====== Controles ======
 document.addEventListener("DOMContentLoaded", () => {
   loadData();
 
-  $("#search")?.addEventListener("input", e => {
-    state.search = e.target.value;
-    render();
-  });
-
-  $("#sort")?.addEventListener("change", e => {
-    state.sort = e.target.value;
-    render();
-  });
+  $("#search")?.addEventListener("input", e => { state.search = e.target.value; render(); });
+  $("#sort")?.addEventListener("change", e => { state.sort = e.target.value; render(); });
 
   $("#clearFilters")?.addEventListener("click", () => {
     state.activeMacros.clear();
     state.search = "";
     state.sort = "name-asc";
+    state.onlyFavs = false;
     $("#search") && ($("#search").value = "");
     $("#sort") && ($("#sort").value = "name-asc");
+    $("#onlyFavs") && ($("#onlyFavs").checked = false);
     renderFilters();
+    render();
+  });
+
+  $("#onlyFavs")?.addEventListener("change", e => {
+    state.onlyFavs = !!e.target.checked;
+    render();
+  });
+
+  $("#viewCards")?.addEventListener("click", () => {
+    state.view = "cards";
+    $("#viewCards").classList.add("is-active");
+    $("#viewList").classList.remove("is-active");
+    render();
+  });
+  $("#viewList")?.addEventListener("click", () => {
+    state.view = "list";
+    $("#viewList").classList.add("is-active");
+    $("#viewCards").classList.remove("is-active");
     render();
   });
 });
