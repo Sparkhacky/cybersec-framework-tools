@@ -165,6 +165,9 @@ function render() {
   const filtered = applyFilters(state.items);
   if (stats) stats.textContent = `Mostrando ${filtered.length} de ${state.items.length} repositorios`;
 
+  // Cambia el layout del contenedor (grid vs lista)
+  grid.classList.toggle('list', state.view === 'list');
+
   grid.innerHTML = (state.view === "cards")
     ? filtered.map(item => card(item)).join("")
     : renderTable(filtered);
@@ -206,9 +209,6 @@ function renderTable(list){
     </tr>
   `).join("");
 
-  // delegación de eventos para estrellas en tabla
-  setTimeout(bindStarHandlers, 0);
-
   return `
     <table class="table">
       <thead>
@@ -217,16 +217,6 @@ function renderTable(list){
       <tbody>${rows}</tbody>
     </table>
   `;
-}
-
-// ====== Eventos para estrellas (tarjeta y tabla) ======
-function bindStarHandlers(){
-  document.querySelectorAll('button.star[data-fav]').forEach(btn=>{
-    btn.onclick = (e)=>{
-      const repo = e.currentTarget.getAttribute('data-fav');
-      toggleFav(repo);
-    };
-  });
 }
 
 // ====== Controles ======
@@ -264,5 +254,13 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#viewList").classList.add("is-active");
     $("#viewCards").classList.remove("is-active");
     render();
+  });
+
+  // ⭐ Delegación para estrellas (cards y lista)
+  $("#grid")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("button.star[data-fav]");
+    if (!btn) return;
+    const repo = btn.getAttribute("data-fav");
+    toggleFav(repo);
   });
 });
