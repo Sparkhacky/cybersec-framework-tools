@@ -121,3 +121,16 @@ a.button:hover{border-color:var(--accent)}
 @media (max-width:560px){
   .grid{grid-template-columns:1fr}
 }
+
+/* ===== Enlaces (general) ===== */
+a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
