@@ -177,4 +177,53 @@ a:hover {
 a { color: var(--text); text-decoration: none; font-weight: 500; }
 a:hover { color: var(--accent); text-decoration: underline; }
 
+/* Contenedor scroll para tabla (móvil: swipe horizontal suave) */
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* Tabla: mínimo ancho para que no colapse columnas importantes */
+.table{
+  min-width: 720px;            /* ajustable; 680–760px suele ir bien */
+  table-layout: fixed;         /* distribuye mejor en pantallas estrechas */
+}
+.table th,.table td{
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Macros: que envuelvan bien en la celda */
+.table .col-macros{
+  min-width: 180px;
+}
+.table .col-macros .badge{
+  display:inline-block;
+  margin:.12rem .2rem .12rem 0;
+  white-space: nowrap;
+}
+
+/* Anchos útiles para primeras columnas */
+.table .col-star{ width:48px; }
+.table .col-name{ width: 220px; }
+
+/* En móvil: sticky para ⭐ y nombre, así no “se pierden” al deslizar */
+@media (max-width: 700px){
+  .table th.col-star,
+  .table td.col-star{
+    position: sticky; left: 0; z-index: 2;
+    background: var(--card);
+  }
+  .table th.col-name,
+  .table td.col-name{
+    position: sticky; left: 48px; z-index: 2;   /* 48px = ancho col-star */
+    background: var(--card);
+  }
+  /* Ajustes de densidad */
+  .table th,.table td{ padding:.5rem .6rem; }
+  .table{ min-width: 640px; }  /* un poco más compacto */
+}
+
+
 
