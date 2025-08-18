@@ -1,65 +1,114 @@
-
-// Data loading + UI logic (vanilla JS)
+// ====== Estado y utilidades ======
 const state = {
   items: [],
-  categories: new Set(),
-  activeCategories: new Set(),
   search: "",
   sort: "name-asc",
+  activeMacros: new Set(),
 };
 
-const el = (sel) => document.querySelector(sel);
-const grid = el("#grid");
-const filtersBox = el("#filters");
-const stats = el("#stats");
+const $ = (sel) => document.querySelector(sel);
+const grid = $("#grid");
+const filtersBox = $("#filters");
+const stats = $("#stats");
 
+// ====== Macros EXACTAS que pediste ======
+const MACROS = [
+  { id: "active-directory", name: "Active Directory", match: /(active\s*directory|bloodhound|sharp(hound)?|winrm|ldap|kerberoast|asreproast|certi(fy|py)|ad\s*cs|gpo|dcsync|impacket)/i },
+  { id: "reconocimiento", name: "Reconocimiento", match: /(recon\b|theharvester|recon-ng|aquatone|httprobe|amass|masscan(?!.*wpa)|sub(list3r|finder)|screenshots?|fingerprint)/i },
+  { id: "redes", name: "Redes", match: /(wireshark|tcpdump|socat|netcat|\bnc\b|scapy|ettercap|bettercap|kismet|netdiscover|network|sniffer)/i },
+  { id: "hacking-web", name: "Hacking Web", match: /(burp|owasp\s*zap|sqlmap|xss|xsstrike|commix|nikto|wfuzz|dirsearch|gobuster(?!.*dns)|csrf|ssti|lfi|rfi|web(?!.*shell))/i },
+  { id: "explotacion", name: "Explotación", match: /(metasploit|exploit(db)?|searchsploit|havoc|sliver|empire(?!.*persist)|pupy|impacket.*(psexec|atexec|wmiexec)|overflow|rop|shellcode)/i },
+  { id: "movimiento-lateral", name: "Movimiento lateral", match: /(lateral|wmiexec|psexec|evil-?winrm|sharp(rdp|dp)|remotepotato0|token\s*imperson|delegate|constrained\s*delegation)/i },
+  { id: "red-team", name: "Red Team", match: /(cobalt\s*strike|sliver|mythic|posh?c2|covenant|empire\s|inveigh|adversary|operator)/i },
+  { id: "elevacion-privilegios", name: "Elevación de privilegios", match: /(linpeas|winpeas|gtfobins|lolbas|privesc(check)?|be?root|kernel\s*exploit|token\s*privileges?)/i },
+  { id: "mobile", name: "Mobile", match: /(mobile(?!.*framework)|ios\s|needle|iossecuritysuite|ipa\b|xcode)/i },
+  { id: "android", name: "Android", match: /(android|apk(tool)?|dex|jadx|androguard|drozer|qark|apk-?mitm|apkleaks)/i },
+  { id: "phising", name: "Phising", match: /(gophish|modlishka|evilginx|king\s*phisher|socialfish|hiddeneye|evilnovnc|phishing\s|credential\s*harvest)/i },
+  { id: "ingenieria-social", name: "Ingeniería Social", match: /(social-?engineer|set\s*\(|awareness|phish(ing)?\s*campaign|vishing|smishing)/i },
+  { id: "threat-intelligence", name: "Threat Intelligence", match: /(misp|opencti|yeti|intelowl|stoq|threatbus|maltrail|cti|ioc)/i },
+  { id: "analisis", name: "Análisis", match: /(analysis(?!.*malware)|diagn[oó]stico|osquery|m[ée]tricas|inspecci[oó]n|networkminer)/i },
+  { id: "reversing", name: "Reversing", match: /(ghidra|radare2|cutter|ida\s*free|binary\s*ninja|frida(?!.*mobile)|angr|reverse(?!.*proxy))/i },
+  { id: "cracking", name: "Cracking", match: /(hashcat|john\s*the\s*ripper|ophcrack|rainbowcrack|crack(station)?|cupp|crunch|hash-?identifier)/i },
+  { id: "enumeracion", name: "Enumeración", match: /(enum4linux(-ng)?|dns(recon|enum)|snmp(check)?|ldapsearch|amass|nmap\s*nse|netdiscover)/i },
+  { id: "auditoria", name: "Auditoría", match: /(lynis|openvas|nessus|scoutsuite|prowler|cloudsploit|kube-?bench|compliance|audit)/i },
+  { id: "persistencia", name: "Persistencia", match: /(sharpersist|persistencesniper|autorun|schtasks|run\s*keys|sticky\s*keys|koadic|backdoor\s*factory|persistence)/i },
+  { id: "autenticacion", name: "Autenticación", match: /(kerbrute|hydra|medusa|patator|eaphammer|nlbrute|password\s*spray|rdp|ssh\s*brute|wpa|wpa2|wep)/i },
+  { id: "forense", name: "Forense", match: /(autopsy|sleuth\s*kit|volatility|rekall|plaso|bulk\s*extractor|memory\s*forensics|lime)/i },
+  { id: "malware", name: "Malware", match: /(yara|cuckoo|remnux|thezoo|malwarebazaar|hybrid\s*analysis|intezer|viper)/i },
+  { id: "automatizacion", name: "Automatización", match: /(autorecon|legion|scripts?\s*auto|pipeline|ci\/cd|pacu|metasploit\s*aux|stoq)/i },
+  { id: "firmware", name: "Firmware", match: /(binwalk|firmware-?mod-?kit|qemu|u-boot|chipsec|firmadyne|fact\s*_core|iot\s*firmware)/i },
+  { id: "devsecops", name: "DevSecOps", match: /(trivy|anchore|clair|sonarqube|bandit\b|checkov|semgrep|kube-?hunter|elk|elastic\s*stack)/i },
+  { id: "post-explotacion", name: "post-explotación", match: /(post-?exploitation|empire(?!.*install)|\bc2\b|covenant|merlin|pupy|havoc|posh?c2)/i },
+  { id: "monitoreo", name: "monitoreo", match: /(prometheus|grafana|wazuh|nagios|zabbix|netdata|glances|elk|elastic\s*stack|sysdig|osquery)/i },
+];
+
+// Mapeo de una herramienta a 0..n macros
+function mapToMacros(tool) {
+  const haystack = [
+    ...(tool.categories || []),
+    ...(tool.tags || []),
+    tool.name || "",
+    tool.description || "",
+  ].join(" | ").toLowerCase();
+
+  return MACROS.filter(m => m.match.test(haystack));
+}
+
+// ====== Carga de datos ======
 async function loadData() {
-  const res = await fetch("repos.json");
+  const res = await fetch("repos.json?v=now");
   const data = await res.json();
-  state.items = data;
-  // Collect categories
-  data.forEach(it => (it.categories||[]).forEach(c => state.categories.add(c)));
+
+  state.items = data.map(t => ({ ...t, macros: mapToMacros(t) }));
   renderFilters();
   render();
 }
 
+// ====== Filtros (solo macros) ======
 function renderFilters() {
-  const cats = Array.from(state.categories).sort((a,b)=>a.localeCompare(b));
-  filtersBox.innerHTML = cats.map(c => {
-    const id = `cat-${c.replace(/\s+/g,'-').toLowerCase()}`;
-    const checked = state.activeCategories.has(c) ? "checked" : "";
+  // pinta SOLO los 27 chips definidos en MACROS (en orden)
+  filtersBox.innerHTML = MACROS.map(m => {
+    const id = `macro-${m.id}`;
+    const checked = state.activeMacros.has(m.id) ? "checked" : "";
     return `<label class="filter-chip" for="${id}">
-      <input id="${id}" type="checkbox" data-cat="${c}" ${checked}/>
-      <span>${c}</span>
+      <input id="${id}" type="checkbox" data-macro="${m.id}" ${checked}/>
+      <span>${m.name}</span>
     </label>`;
   }).join("");
+
+  // listeners
   filtersBox.querySelectorAll("input[type=checkbox]").forEach(cb => {
     cb.addEventListener("change", (e) => {
-      const cat = e.target.getAttribute("data-cat");
-      if (e.target.checked) state.activeCategories.add(cat);
-      else state.activeCategories.delete(cat);
+      const id = e.target.getAttribute("data-macro");
+      if (e.target.checked) state.activeMacros.add(id);
+      else state.activeMacros.delete(id);
       render();
     });
   });
 }
 
+// ====== Filtro, búsqueda y orden ======
 function applyFilters(items) {
   let out = items;
-  // category filter
-  if (state.activeCategories.size > 0) {
-    out = out.filter(it => it.categories && it.categories.some(c => state.activeCategories.has(c)));
+
+  // por macros (OR). Si no hay activos, no filtra por macro.
+  if (state.activeMacros.size > 0) {
+    out = out.filter(it => {
+      const macroIds = (it.macros || []).map(m => m.id);
+      return [...state.activeMacros].some(id => macroIds.includes(id));
+    });
   }
-  // search filter
+
+  // búsqueda
   if (state.search.trim() !== "") {
     const q = state.search.toLowerCase();
-    out = out.filter(it =>
-      (it.name||"").toLowerCase().includes(q) ||
-      (it.description||"").toLowerCase().includes(q) ||
-      (it.tags||[]).some(t => t.toLowerCase().includes(q)) ||
-      (it.language||"").toLowerCase().includes(q)
-    );
+    out = out.filter(it => {
+      const base = `${it.name||""} ${it.description||""} ${(it.tags||[]).join(" ")} ${(it.categories||[]).join(" ")}`.toLowerCase();
+      return base.includes(q);
+    });
   }
-  // sort
+
+  // orden
   const [key, dir] = state.sort.split("-");
   out.sort((a,b)=>{
     let va="", vb="";
@@ -69,28 +118,30 @@ function applyFilters(items) {
     const cmp = va.localeCompare(vb);
     return dir==="asc"? cmp : -cmp;
   });
+
   return out;
 }
 
+// ====== Render de tarjetas ======
 function render() {
   const filtered = applyFilters(state.items);
-  stats.textContent = `Mostrando ${filtered.length} de ${state.items.length} repositorios`;
+  if (stats) stats.textContent = `Mostrando ${filtered.length} de ${state.items.length} repositorios`;
+
   grid.innerHTML = filtered.map(item => card(item)).join("");
 }
 
 function card(item){
-  const tags = (item.tags||[]).map(t=>`<span class="badge">${escapeHtml(t)}</span>`).join("");
-  const cats = (item.categories||[]).map(t=>`<span class="badge">${escapeHtml(t)}</span>`).join("");
-  const plats = (item.platforms||[]).map(t=>`<span class="badge">${escapeHtml(t)}</span>`).join("");
+  const badges = (item.macros || []).map(m=>`<span class="badge">${escapeHtml(m.name)}</span>`).join("");
   const lang = item.language ? `<span class="badge">${escapeHtml(item.language)}</span>` : "";
+  const plats = (item.platforms||[]).map(t=>`<span class="badge">${escapeHtml(t)}</span>`).join("");
+
   return `<article class="card">
     <div class="row">
       <h3>${escapeHtml(item.name)}</h3>
       <a class="button" href="${item.repo}" target="_blank" rel="noopener">Repo</a>
     </div>
     <p>${escapeHtml(item.description||"")}</p>
-    <div class="badges">${cats}</div>
-    <div class="badges">${tags}</div>
+    <div class="badges">${badges}</div>
     <div class="badges">${plats} ${lang}</div>
   </article>`;
 }
@@ -101,20 +152,26 @@ function escapeHtml(str){
   })[s]);
 }
 
-// Wiring controls
+// ====== Controles ======
 document.addEventListener("DOMContentLoaded", () => {
   loadData();
-  const search = document.getElementById("search");
-  const sort = document.getElementById("sort");
-  const clear = document.getElementById("clearFilters");
-  search.addEventListener("input", e => { state.search = e.target.value; render(); });
-  sort.addEventListener("change", e => { state.sort = e.target.value; render(); });
-  clear.addEventListener("click", () => {
-    state.activeCategories.clear();
+
+  $("#search")?.addEventListener("input", e => {
+    state.search = e.target.value;
+    render();
+  });
+
+  $("#sort")?.addEventListener("change", e => {
+    state.sort = e.target.value;
+    render();
+  });
+
+  $("#clearFilters")?.addEventListener("click", () => {
+    state.activeMacros.clear();
     state.search = "";
     state.sort = "name-asc";
-    document.getElementById("search").value = "";
-    document.getElementById("sort").value = "name-asc";
+    $("#search") && ($("#search").value = "");
+    $("#sort") && ($("#sort").value = "name-asc");
     renderFilters();
     render();
   });
