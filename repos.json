@@ -625,5 +625,221 @@
       "incident-response"
     ],
     "language": "C++"
+  },
+  {
+    "name": "MobSF (Mobile Security Framework)",
+    "description": "Análisis estático y dinámico de apps Android/iOS. Ideal para pentesting móvil y revisión de APKs.",
+    "repo": "https://github.com/MobSF/Mobile-Security-Framework-MobSF",
+    "categories": [
+      "Análisis",
+      "Android",
+      "Mobile"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "mobile",
+      "static-analysis",
+      "dynamic-analysis",
+      "apk"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Frida",
+    "description": "Instrumentación dinámica para apps móviles: hookear funciones, inspección en tiempo real.",
+    "repo": "https://github.com/frida/frida",
+    "categories": [
+      "Android",
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS",
+      "Android"
+    ],
+    "tags": [
+      "instrumentation",
+      "hooking",
+      "runtime"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Objection",
+    "description": "Exploración de apps Android/iOS sin root/jailbreak (cuando es posible), basado en Frida.",
+    "repo": "https://github.com/sensepost/objection",
+    "categories": [
+      "Android",
+      "Post-Explotación",
+      "Análisis"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS",
+      "Android"
+    ],
+    "tags": [
+      "frida",
+      "mobile",
+      "bypass",
+      "runtime"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Drozer",
+    "description": "Framework de evaluación de seguridad para Android (componentes, permisos, IPC).",
+    "repo": "https://github.com/WithSecureLabs/drozer",
+    "categories": [
+      "Android",
+      "Análisis",
+      "Explotación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS",
+      "Android"
+    ],
+    "tags": [
+      "android",
+      "pentest",
+      "ipc",
+      "permissions"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Androguard",
+    "description": "Librería para análisis estático de APKs/DEX (disassembly, parsing, firmas).",
+    "repo": "https://github.com/androguard/androguard",
+    "categories": [
+      "Android",
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "apk",
+      "dex",
+      "static-analysis"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "JADX",
+    "description": "Decompilador de DEX/APK a Java y Kotlin con GUI.",
+    "repo": "https://github.com/skylot/jadx",
+    "categories": [
+      "Android",
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "decompiler",
+      "dex",
+      "apk"
+    ],
+    "language": "Java"
+  },
+  {
+    "name": "APKLeaks",
+    "description": "Detecta secretos (API keys, endpoints) en APKs mediante análisis estático.",
+    "repo": "https://github.com/dwisiswant0/apkleaks",
+    "categories": [
+      "Android",
+      "Análisis",
+      "DevSecOps"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "secrets",
+      "apk",
+      "static-analysis"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "quark-engine",
+    "description": "Motor de puntuación para análisis de malware Android (reglas y heurísticas).",
+    "repo": "https://github.com/quark-engine/quark-engine",
+    "categories": [
+      "Android",
+      "Malware",
+      "Análisis"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "malware",
+      "rules",
+      "scoring"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "apk-mitm",
+    "description": "Parcheo automático de APKs para permitir MITM en tráfico (desactiva pinning, etc.).",
+    "repo": "https://github.com/shroudedcode/apk-mitm",
+    "categories": [
+      "Android",
+      "Análisis",
+      "Redes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "mitm",
+      "pinning-bypass",
+      "apk"
+    ],
+    "language": "JavaScript"
+  },
+  {
+    "name": "mitmproxy",
+    "description": "Interceptación y manipulación de tráfico HTTP(S) con consola/GUI; útil para probar apps móviles.",
+    "repo": "https://github.com/mitmproxy/mitmproxy",
+    "categories": [
+      "Android",
+      "Redes",
+      "Análisis"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "mitm",
+      "proxy",
+      "traffic"
+    ],
+    "language": "Python"
   }
 ]
