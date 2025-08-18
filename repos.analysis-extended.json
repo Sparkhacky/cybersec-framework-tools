@@ -1,0 +1,629 @@
+[
+  {
+    "name": "Nmap",
+    "description": "Escáner de puertos y servicios. Reconocimiento de red profundo.",
+    "repo": "https://github.com/nmap/nmap",
+    "categories": [
+      "Reconocimiento",
+      "Redes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "port-scanner",
+      "enumeration"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "sqlmap",
+    "description": "Automatiza inyección SQL y toma de control de DBs.",
+    "repo": "https://github.com/sqlmapproject/sqlmap",
+    "categories": [
+      "Hacking Web",
+      "Explotación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "sqli",
+      "db",
+      "pentest"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Responder",
+    "description": "Envenenamiento LLMNR/NBT-NS/MDNS para robar hashes y credenciales.",
+    "repo": "https://github.com/lgandx/Responder",
+    "categories": [
+      "Movimiento Lateral",
+      "Red Team",
+      "Explotación"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "llmnr",
+      "ntlm",
+      "hashes"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "LinPEAS",
+    "description": "Enumeración para elevación de privilegios en Linux.",
+    "repo": "https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS",
+    "categories": [
+      "Elevación de Privilegios",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "privesc",
+      "enumeration"
+    ],
+    "language": "Shell"
+  },
+  {
+    "name": "WinPEAS",
+    "description": "Enumeración para elevación de privilegios en Windows.",
+    "repo": "https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS",
+    "categories": [
+      "Elevación de Privilegios",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "privesc",
+      "enumeration"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "Evilginx2",
+    "description": "Framework de phishing con proxies inversos para capturar cookies de sesión.",
+    "repo": "https://github.com/kgretzky/evilginx2",
+    "categories": [
+      "Phishing",
+      "Ingeniería Social"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "adversary-in-the-middle",
+      "2fa-bypass"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Ghidra",
+    "description": "Suite de ingeniería inversa desarrollada por NSA.",
+    "repo": "https://github.com/NationalSecurityAgency/ghidra",
+    "categories": [
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "reverse",
+      "malware-analysis"
+    ],
+    "language": "Java"
+  },
+  {
+    "name": "BloodHound",
+    "description": "Descubre y visualiza relaciones en AD para rutas de ataque.",
+    "repo": "https://github.com/BloodHoundAD/BloodHound",
+    "categories": [
+      "Active Directory",
+      "Movimiento Lateral",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux",
+      "macOS"
+    ],
+    "tags": [
+      "ad",
+      "graph",
+      "paths"
+    ],
+    "language": "TypeScript"
+  },
+  {
+    "name": "John the Ripper",
+    "description": "Cracking de contraseñas multi-OS.",
+    "repo": "https://github.com/openwall/john",
+    "categories": [
+      "Cracking",
+      "Análisis"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "password",
+      "hash"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Hashcat",
+    "description": "Cracking avanzado de hashes con GPU.",
+    "repo": "https://github.com/hashcat/hashcat",
+    "categories": [
+      "Cracking"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "gpu",
+      "password"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Impacket",
+    "description": "Colección de scripts y librerías para SMB, LDAP y Kerberos. Base para muchos ataques/pruebas en AD.",
+    "repo": "https://github.com/fortra/impacket",
+    "categories": [
+      "Active Directory",
+      "Post-Explotación",
+      "Movimiento Lateral"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "smb",
+      "kerberos",
+      "ldap",
+      "dcsync",
+      "pth",
+      "relay"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "CrackMapExec",
+    "description": "Herramienta integral para AD: enumeración, ejecución remota, password spraying y más.",
+    "repo": "https://github.com/Porchetta-Industries/CrackMapExec",
+    "categories": [
+      "Active Directory",
+      "Movimiento Lateral",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "smb",
+      "winrm",
+      "ldap",
+      "exec",
+      "psexec"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Rubeus",
+    "description": "Suite Kerberos para Windows: AS-REP/kerberoast, ticket management, S4U.",
+    "repo": "https://github.com/GhostPack/Rubeus",
+    "categories": [
+      "Active Directory",
+      "Post-Explotación"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "kerberos",
+      "kerberoast",
+      "asreproast",
+      "tickets",
+      "s4u"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "PowerView (PowerSploit)",
+    "description": "Módulos PowerShell para enumeración y abuso de AD: trusts, GPOs, ACLs, sesiones.",
+    "repo": "https://github.com/PowerShellMafia/PowerSploit",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "powershell",
+      "ad",
+      "enumeration",
+      "acl"
+    ],
+    "language": "PowerShell"
+  },
+  {
+    "name": "Kerbrute",
+    "description": "Descubrimiento de usuarios y password spraying mediante Kerberos.",
+    "repo": "https://github.com/ropnop/kerbrute",
+    "categories": [
+      "Active Directory",
+      "Ataques de Autenticación"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "kerberos",
+      "user-enum",
+      "spray"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "ldapdomaindump",
+    "description": "Dumpeo de información de dominio vía LDAP con salida HTML/JSON.",
+    "repo": "https://github.com/dirkjanm/ldapdomaindump",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "ldap",
+      "enumeration",
+      "report"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "ADRecon",
+    "description": "Recolecta información de AD y genera informe consolidado para evaluación de seguridad.",
+    "repo": "https://github.com/adrecon/ADRecon",
+    "categories": [
+      "Active Directory",
+      "Análisis",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "report",
+      "inventory",
+      "auditing"
+    ],
+    "language": "PowerShell"
+  },
+  {
+    "name": "SharpHound",
+    "description": "Recolector de datos para BloodHound desde sistemas Windows.",
+    "repo": "https://github.com/BloodHoundAD/SharpHound",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "bloodhound",
+      "collector",
+      "graph"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "BloodHound.py",
+    "description": "Recolector de datos compatible con BloodHound desde Linux/macOS.",
+    "repo": "https://github.com/fox-it/BloodHound.py",
+    "categories": [
+      "Active Directory",
+      "Enumeración"
+    ],
+    "platforms": [
+      "Linux",
+      "macOS"
+    ],
+    "tags": [
+      "bloodhound",
+      "collector",
+      "ldap"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Certipy",
+    "description": "Abuso de Active Directory Certificate Services (AD CS): enumeración y explotación.",
+    "repo": "https://github.com/ly4k/Certipy",
+    "categories": [
+      "Active Directory",
+      "Explotación",
+      "Persistencia"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "adcs",
+      "certificates",
+      "escalation",
+      "persistence"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Certify",
+    "description": "Enumeración y abuso de AD CS desde Windows.",
+    "repo": "https://github.com/GhostPack/Certify",
+    "categories": [
+      "Active Directory",
+      "Explotación",
+      "Persistencia"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "adcs",
+      "certificates",
+      "abuse"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "PetitPotam",
+    "description": "Coerción EFSRPC para ataques NTLM relay en ciertos entornos de AD.",
+    "repo": "https://github.com/topotam/PetitPotam",
+    "categories": [
+      "Active Directory",
+      "Ataques de Autenticación"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "tags": [
+      "ntlm",
+      "relay",
+      "coercion"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Volatility3",
+    "description": "Framework avanzado de análisis de memoria RAM para investigación forense y respuesta a incidentes.",
+    "repo": "https://github.com/volatilityfoundation/volatility3",
+    "categories": [
+      "Análisis",
+      "Forense"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "memory",
+      "forensics",
+      "incident-response"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "YARA",
+    "description": "Lenguaje de reglas para identificar malware mediante patrones.",
+    "repo": "https://github.com/VirusTotal/yara",
+    "categories": [
+      "Análisis",
+      "Malware"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "malware",
+      "rules",
+      "detection"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "Cuckoo Sandbox",
+    "description": "Sandbox automatizado para análisis de malware.",
+    "repo": "https://github.com/cuckoosandbox/cuckoo",
+    "categories": [
+      "Análisis",
+      "Malware",
+      "Automatización"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "sandbox",
+      "malware-analysis",
+      "automation"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Radare2",
+    "description": "Framework de reversing y análisis binario.",
+    "repo": "https://github.com/radareorg/radare2",
+    "categories": [
+      "Análisis",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "reverse",
+      "binary",
+      "debug"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "apktool",
+    "description": "Herramienta para ingeniería inversa de aplicaciones Android (APK).",
+    "repo": "https://github.com/iBotPeaches/Apktool",
+    "categories": [
+      "Análisis",
+      "Reversing",
+      "Android"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "android",
+      "reverse",
+      "apk"
+    ],
+    "language": "Java"
+  },
+  {
+    "name": "Binwalk",
+    "description": "Análisis y extracción de firmware e imágenes binarias.",
+    "repo": "https://github.com/ReFirmLabs/binwalk",
+    "categories": [
+      "Análisis",
+      "Reversing",
+      "Firmware"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "firmware",
+      "reverse",
+      "iot"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Wireshark",
+    "description": "Analizador de tráfico de red multiplataforma.",
+    "repo": "https://gitlab.com/wireshark/wireshark",
+    "categories": [
+      "Análisis",
+      "Redes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "network",
+      "packet",
+      "sniffer"
+    ],
+    "language": "C"
+  },
+  {
+    "name": "NetworkMiner",
+    "description": "Herramienta de análisis forense de red (NFAT) para extracción de archivos y credenciales.",
+    "repo": "https://www.netresec.com/?page=NetworkMiner",
+    "categories": [
+      "Análisis",
+      "Forense",
+      "Redes"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "tags": [
+      "network",
+      "forensics",
+      "pcap"
+    ],
+    "language": "C#"
+  },
+  {
+    "name": "MISP",
+    "description": "Malware Information Sharing Platform: compartición de IoCs y threat intelligence.",
+    "repo": "https://github.com/MISP/MISP",
+    "categories": [
+      "Análisis",
+      "Threat Intelligence"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "ioc",
+      "threat-intel",
+      "sharing"
+    ],
+    "language": "PHP"
+  },
+  {
+    "name": "OSQuery",
+    "description": "Plataforma para explorar el estado del sistema operativo con consultas SQL.",
+    "repo": "https://github.com/osquery/osquery",
+    "categories": [
+      "Análisis",
+      "Monitoreo"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "sql",
+      "monitoring",
+      "incident-response"
+    ],
+    "language": "C++"
+  }
+]
