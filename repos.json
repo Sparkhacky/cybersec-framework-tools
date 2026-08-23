@@ -944,24 +944,6 @@
     "language": "C"
   },
   {
-    "name": "NLBrute",
-    "description": "Ataques de fuerza bruta a credenciales RDP (muy usado en red team).",
-    "repo": "https://github.com/stanislav-web/NLBrute",
-    "categories": [
-      "Ataques de Autenticación",
-      "Cracking"
-    ],
-    "platforms": [
-      "Windows"
-    ],
-    "tags": [
-      "rdp",
-      "bruteforce",
-      "password"
-    ],
-    "language": "C++"
-  },
-  {
     "name": "EAPHammer",
     "description": "Ataques contra redes WiFi WPA2-Enterprise (evil twin, rogue AP).",
     "repo": "https://github.com/s0lst1c3/eaphammer",
@@ -1102,26 +1084,6 @@
       "gcp"
     ],
     "language": "JavaScript"
-  },
-  {
-    "name": "osquery",
-    "description": "Auditoría de sistemas mediante consultas SQL (infraestructuras locales y cloud).",
-    "repo": "https://github.com/osquery/osquery",
-    "categories": [
-      "Auditoría",
-      "Análisis"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "audit",
-      "sql",
-      "monitoring"
-    ],
-    "language": "C++"
   },
   {
     "name": "Falco",
@@ -1368,44 +1330,6 @@
     "language": "C++"
   },
   {
-    "name": "RainbowCrack",
-    "description": "Generación y uso de tablas arcoíris para crackeo de hashes.",
-    "repo": "https://github.com/stephenbradshaw/rainbowcrack",
-    "categories": [
-      "Cracking"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows"
-    ],
-    "tags": [
-      "rainbow-tables",
-      "hash",
-      "cracking"
-    ],
-    "language": "C++"
-  },
-  {
-    "name": "CrackStation",
-    "description": "Servicio y wordlist masiva para cracking de contraseñas y hashes.",
-    "repo": "https://crackstation.net/",
-    "categories": [
-      "Cracking",
-      "Ataques de Autenticación"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "wordlist",
-      "hash",
-      "dictionary"
-    ],
-    "language": "N/A"
-  },
-  {
     "name": "cupp",
     "description": "Common User Passwords Profiler: genera wordlists personalizadas.",
     "repo": "https://github.com/Mebus/cupp",
@@ -1461,24 +1385,6 @@
       "identifier"
     ],
     "language": "Python"
-  },
-  {
-    "name": "Samdump2",
-    "description": "Extrae hashes de contraseñas desde el archivo SAM de Windows.",
-    "repo": "https://github.com/berzerk0/samdump2",
-    "categories": [
-      "Cracking",
-      "Windows"
-    ],
-    "platforms": [
-      "Linux"
-    ],
-    "tags": [
-      "sam",
-      "ntlm",
-      "hashes"
-    ],
-    "language": "C"
   },
   {
     "name": "Trivy",
@@ -2012,46 +1918,6 @@
     "language": "Python"
   },
   {
-    "name": "searchsploit",
-    "description": "Utilidad de línea de comandos para buscar en ExploitDB.",
-    "repo": "https://gitlab.com/exploit-database/exploitdb",
-    "categories": [
-      "Explotación",
-      "Herramienta CLI"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "exploits",
-      "search",
-      "cli"
-    ],
-    "language": "Shell"
-  },
-  {
-    "name": "Sliver",
-    "description": "Framework de C2 para pruebas de intrusión y red team.",
-    "repo": "https://github.com/BishopFox/sliver",
-    "categories": [
-      "Explotación",
-      "C2"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "c2",
-      "post-exploitation",
-      "redteam"
-    ],
-    "language": "Go"
-  },
-  {
     "name": "Havoc",
     "description": "Framework moderno de C2 para Red Teaming.",
     "repo": "https://github.com/HavocFramework/Havoc",
@@ -2377,26 +2243,6 @@
     "language": "Java"
   },
   {
-    "name": "OWASP ZAP",
-    "description": "Scanner de seguridad open source para aplicaciones web.",
-    "repo": "https://github.com/zaproxy/zaproxy",
-    "categories": [
-      "Hacking Web",
-      "Scanner"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "web",
-      "scanner",
-      "owasp"
-    ],
-    "language": "Java"
-  },
-  {
     "name": "XSStrike",
     "description": "Framework para pruebas de XSS avanzado.",
     "repo": "https://github.com/s0md3v/XSStrike",
@@ -2593,24 +2439,6 @@
       "phishing",
       "awareness",
       "campaigns"
-    ],
-    "language": "Python"
-  },
-  {
-    "name": "HiddenEye",
-    "description": "Herramienta para clonar páginas y recolectar credenciales vía phishing.",
-    "repo": "https://github.com/DarkSecDevelopers/HiddenEye",
-    "categories": [
-      "Ingeniería Social",
-      "Phishing"
-    ],
-    "platforms": [
-      "Linux"
-    ],
-    "tags": [
-      "phishing",
-      "web",
-      "credenciales"
     ],
     "language": "Python"
   },
@@ -2839,26 +2667,6 @@
     "language": "Java"
   },
   {
-    "name": "jadx",
-    "description": "Decompilador de código Java para Android (DEX -> Java).",
-    "repo": "https://github.com/skylot/jadx",
-    "categories": [
-      "Mobile",
-      "Reversing"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "mobile",
-      "android",
-      "reverse-engineering"
-    ],
-    "language": "Java"
-  },
-  {
     "name": "iOS Security Suite",
     "description": "Framework para pruebas de seguridad en aplicaciones iOS.",
     "repo": "https://github.com/securing/IOSSecuritySuite",
@@ -3033,26 +2841,6 @@
     "language": "C, Python"
   },
   {
-    "name": "Osquery",
-    "description": "Plataforma para monitoreo de sistemas usando consultas SQL.",
-    "repo": "https://github.com/osquery/osquery",
-    "categories": [
-      "Monitoreo",
-      "Sistemas"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "monitoring",
-      "sql",
-      "systems"
-    ],
-    "language": "C++"
-  },
-  {
     "name": "Netdata",
     "description": "Monitoreo en tiempo real de sistemas y aplicaciones.",
     "repo": "https://github.com/netdata/netdata",
@@ -3089,24 +2877,6 @@
       "monitoring",
       "cli",
       "systems"
-    ],
-    "language": "Python"
-  },
-  {
-    "name": "CrackMapExec (CME)",
-    "description": "Herramienta de post-explotación para movimiento lateral en entornos Windows/Active Directory.",
-    "repo": "https://github.com/Porchetta-Industries/CrackMapExec",
-    "categories": [
-      "Movimientos Laterales",
-      "Post-explotación"
-    ],
-    "platforms": [
-      "Linux"
-    ],
-    "tags": [
-      "lateral-movement",
-      "ad",
-      "windows"
     ],
     "language": "Python"
   },
@@ -3223,60 +2993,6 @@
     "language": "C#"
   },
   {
-    "name": "PowerSploit",
-    "description": "Conjunto de scripts PowerShell para post-explotación, incluyendo técnicas de persistencia.",
-    "repo": "https://github.com/PowerShellMafia/PowerSploit",
-    "categories": [
-      "Persistencia",
-      "Post-explotación"
-    ],
-    "platforms": [
-      "Windows"
-    ],
-    "tags": [
-      "powershell",
-      "persistence",
-      "post-exploitation"
-    ],
-    "language": "PowerShell"
-  },
-  {
-    "name": "Koadic (COM Command & Control)",
-    "description": "Framework de post-explotación que permite ejecutar scripts JScript/VBScript en memoria, con opciones de persistencia.",
-    "repo": "https://github.com/zerosum0x0/koadic",
-    "categories": [
-      "Persistencia",
-      "Post-explotación"
-    ],
-    "platforms": [
-      "Windows"
-    ],
-    "tags": [
-      "c2",
-      "post-exploitation",
-      "persistence"
-    ],
-    "language": "Python, JScript"
-  },
-  {
-    "name": "Sticky Keys Hack",
-    "description": "Técnica clásica de persistencia en Windows reemplazando sethc.exe para obtener shells persistentes.",
-    "repo": "https://github.com/linuz/Sticky-Keys-Shell",
-    "categories": [
-      "Persistencia",
-      "Windows"
-    ],
-    "platforms": [
-      "Windows"
-    ],
-    "tags": [
-      "persistence",
-      "windows",
-      "sticky-keys"
-    ],
-    "language": "Batch"
-  },
-  {
     "name": "PersistenceSniper",
     "description": "Script PowerShell para detectar y enumerar métodos de persistencia en sistemas Windows.",
     "repo": "https://github.com/last-byte/PersistenceSniper",
@@ -3313,24 +3029,6 @@
       "injection"
     ],
     "language": "Python"
-  },
-  {
-    "name": "AutoRun Persistence",
-    "description": "Scripts para establecer persistencia a través de claves de AutoRun en Windows.",
-    "repo": "https://github.com/rcs-rds/Windows-AutoRun-Persistence",
-    "categories": [
-      "Persistencia",
-      "Windows"
-    ],
-    "platforms": [
-      "Windows"
-    ],
-    "tags": [
-      "persistence",
-      "autorun",
-      "registry"
-    ],
-    "language": "PowerShell"
   },
   {
     "name": "Modlishka",
@@ -3407,43 +3105,6 @@
     "language": "Ruby"
   },
   {
-    "name": "Cobalt Strike (Community forks)",
-    "description": "Herramienta de post-explotación y C2 (disponible en forks no oficiales).",
-    "repo": "https://github.com/zer0yu/CobaltStrike-Community",
-    "categories": [
-      "Post-explotación",
-      "C2"
-    ],
-    "platforms": [
-      "Windows",
-      "Linux"
-    ],
-    "tags": [
-      "c2",
-      "post-exploitation",
-      "beacon"
-    ],
-    "language": "Java"
-  },
-  {
-    "name": "Powersploit",
-    "description": "Conjunto de módulos PowerShell para post-explotación.",
-    "repo": "https://github.com/PowerShellMafia/PowerSploit",
-    "categories": [
-      "Post-explotación",
-      "Windows"
-    ],
-    "platforms": [
-      "Windows"
-    ],
-    "tags": [
-      "post-exploitation",
-      "powershell",
-      "windows"
-    ],
-    "language": "PowerShell"
-  },
-  {
     "name": "Merlin",
     "description": "Framework C2 basado en HTTP/2 para post-explotación.",
     "repo": "https://github.com/Ne0nd0g/merlin",
@@ -3462,26 +3123,6 @@
       "http2"
     ],
     "language": "Go"
-  },
-  {
-    "name": "Havoc C2",
-    "description": "Moderno framework C2 para red team y post-explotación.",
-    "repo": "https://github.com/HavocFramework/Havoc",
-    "categories": [
-      "Post-explotación",
-      "C2"
-    ],
-    "platforms": [
-      "Windows",
-      "Linux",
-      "macOS"
-    ],
-    "tags": [
-      "c2",
-      "post-exploitation",
-      "redteam"
-    ],
-    "language": "C++, Go"
   },
   {
     "name": "Covenant",
@@ -3560,26 +3201,6 @@
       "osint"
     ],
     "language": "C#"
-  },
-  {
-    "name": "dnsenum",
-    "description": "Herramienta de enumeración DNS.",
-    "repo": "https://github.com/fwaeytens/dnsenum",
-    "categories": [
-      "Reconocimiento",
-      "DNS"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "reconnaissance",
-      "dns",
-      "osint"
-    ],
-    "language": "Perl"
   },
   {
     "name": "Aquatone",
@@ -3776,27 +3397,6 @@
     "tags": [
       "network",
       "utility",
-      "tcp",
-      "udp"
-    ],
-    "language": "C"
-  },
-  {
-    "name": "Socat",
-    "description": "Herramienta para redirección y proxy de conexiones de red.",
-    "repo": "https://github.com/awesome-socat/socat",
-    "categories": [
-      "Redes",
-      "Utilidades"
-    ],
-    "platforms": [
-      "Linux",
-      "Windows",
-      "macOS"
-    ],
-    "tags": [
-      "network",
-      "proxy",
       "tcp",
       "udp"
     ],
@@ -4101,5 +3701,798 @@
       "analysis"
     ],
     "language": "Python"
+  },
+  {
+    "name": "Nuclei",
+    "description": "Escáner rápido basado en plantillas para detectar vulnerabilidades, configuraciones inseguras y exposiciones.",
+    "repo": "https://github.com/projectdiscovery/nuclei",
+    "categories": [
+      "Hacking Web",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "vulnerability-scanner",
+      "templates",
+      "automation"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "httpx",
+    "description": "Kit HTTP multipropósito para descubrir y validar servicios web a gran escala.",
+    "repo": "https://github.com/projectdiscovery/httpx",
+    "categories": [
+      "Reconocimiento",
+      "Hacking Web"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "http",
+      "probe",
+      "recon"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Naabu",
+    "description": "Escáner de puertos rápido y sencillo para flujos modernos de reconocimiento.",
+    "repo": "https://github.com/projectdiscovery/naabu",
+    "categories": [
+      "Reconocimiento",
+      "Redes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "port-scanner",
+      "recon",
+      "network"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Subfinder",
+    "description": "Descubre subdominios mediante fuentes pasivas para acelerar el reconocimiento externo.",
+    "repo": "https://github.com/projectdiscovery/subfinder",
+    "categories": [
+      "Reconocimiento",
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "subdomains",
+      "passive-recon",
+      "dns"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "TruffleHog",
+    "description": "Localiza credenciales y secretos expuestos en repositorios, historiales y otros orígenes.",
+    "repo": "https://github.com/trufflesecurity/trufflehog",
+    "categories": [
+      "DevSecOps",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "secrets",
+      "git",
+      "credentials"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Gitleaks",
+    "description": "Detecta y previene secretos codificados en repositorios Git y pipelines CI/CD.",
+    "repo": "https://github.com/gitleaks/gitleaks",
+    "categories": [
+      "DevSecOps",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "secrets",
+      "git",
+      "ci-cd"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Cloud Custodian",
+    "description": "Motor de reglas para gobernanza, seguridad y optimización automatizada de recursos cloud.",
+    "repo": "https://github.com/cloud-custodian/cloud-custodian",
+    "categories": [
+      "Cloud",
+      "Automatización",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "aws",
+      "azure",
+      "gcp",
+      "compliance"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "ScubaGear",
+    "description": "Evalúa configuraciones de seguridad de Microsoft 365 frente a las guías de CISA.",
+    "repo": "https://github.com/cisagov/ScubaGear",
+    "categories": [
+      "Cloud",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "microsoft-365",
+      "cisa",
+      "compliance"
+    ],
+    "language": "PowerShell"
+  },
+  {
+    "name": "MITRE ATT&CK Navigator",
+    "description": "Visualiza, anota y compara técnicas de MITRE ATT&CK para análisis y planificación defensiva.",
+    "repo": "https://github.com/mitre-attack/attack-navigator",
+    "categories": [
+      "Threat Intelligence",
+      "Análisis"
+    ],
+    "platforms": [
+      "Web"
+    ],
+    "tags": [
+      "mitre-attck",
+      "threat-modeling",
+      "visualization"
+    ],
+    "language": "TypeScript"
+  },
+  {
+    "name": "capa",
+    "description": "Identifica capacidades presentes en ejecutables sospechosos mediante reglas legibles.",
+    "repo": "https://github.com/mandiant/capa",
+    "categories": [
+      "Malware",
+      "Reversing"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "malware-analysis",
+      "capabilities",
+      "rules"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "FLARE-VM",
+    "description": "Prepara un entorno Windows reproducible con herramientas para análisis de malware y reversing.",
+    "repo": "https://github.com/mandiant/flare-vm",
+    "categories": [
+      "Malware",
+      "Reversing"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "tags": [
+      "malware-lab",
+      "toolkit",
+      "reverse-engineering"
+    ],
+    "language": "PowerShell"
+  },
+  {
+    "name": "Velociraptor",
+    "description": "Plataforma de visibilidad, recolección y respuesta forense en endpoints a gran escala.",
+    "repo": "https://github.com/Velocidex/velociraptor",
+    "categories": [
+      "Forense",
+      "Respuesta a Incidentes"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "dfir",
+      "endpoint",
+      "incident-response"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "JA4",
+    "description": "Suite de huellas de red para perfilar clientes, servidores y tráfico cifrado.",
+    "repo": "https://github.com/FoxIO-LLC/ja4",
+    "categories": [
+      "Redes",
+      "Threat Intelligence"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "fingerprinting",
+      "tls",
+      "network"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "ffuf",
+    "description": "Fuzzer web rápido para descubrir rutas, parámetros, hosts virtuales y recursos ocultos.",
+    "repo": "https://github.com/ffuf/ffuf",
+    "categories": [
+      "Hacking Web",
+      "Reconocimiento"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "fuzzing",
+      "content-discovery",
+      "web"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Kiterunner",
+    "description": "Descubre rutas y endpoints de API mediante diccionarios orientados a aplicaciones modernas.",
+    "repo": "https://github.com/assetnote/kiterunner",
+    "categories": [
+      "Hacking Web",
+      "Reconocimiento"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "api",
+      "route-discovery",
+      "fuzzing"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "PayloadsAllTheThings",
+    "description": "Colección práctica de payloads, técnicas y referencias para pruebas de seguridad web.",
+    "repo": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+    "categories": [
+      "Hacking Web",
+      "Repositorio"
+    ],
+    "platforms": [
+      "Web"
+    ],
+    "tags": [
+      "payloads",
+      "cheatsheets",
+      "pentest"
+    ]
+  },
+  {
+    "name": "SecLists",
+    "description": "Colección esencial de listas para enumeración, fuzzing, credenciales y pruebas de seguridad.",
+    "repo": "https://github.com/danielmiessler/SecLists",
+    "categories": [
+      "Reconocimiento",
+      "Cracking"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "wordlists",
+      "fuzzing",
+      "passwords"
+    ]
+  },
+  {
+    "name": "Turbo Intruder",
+    "description": "Extensión de Burp Suite para enviar grandes volúmenes de peticiones HTTP con control preciso.",
+    "repo": "https://github.com/PortSwigger/turbo-intruder",
+    "categories": [
+      "Hacking Web"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "burp",
+      "http",
+      "automation"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Arjun",
+    "description": "Descubre parámetros HTTP ocultos mediante diccionarios y análisis de respuestas.",
+    "repo": "https://github.com/s0md3v/Arjun",
+    "categories": [
+      "Hacking Web",
+      "Reconocimiento"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "parameters",
+      "http",
+      "recon"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Hakrawler",
+    "description": "Rastreador web sencillo diseñado para encajar en pipelines de reconocimiento.",
+    "repo": "https://github.com/hakluke/hakrawler",
+    "categories": [
+      "Reconocimiento",
+      "Hacking Web"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "crawler",
+      "urls",
+      "pipeline"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "GoWitness",
+    "description": "Captura pantallas de servicios web y ayuda a clasificar grandes superficies de ataque.",
+    "repo": "https://github.com/sensepost/gowitness",
+    "categories": [
+      "Reconocimiento",
+      "Hacking Web"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "screenshots",
+      "web",
+      "recon"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "OWASP dep-scan",
+    "description": "Analiza dependencias y genera inventarios para detectar vulnerabilidades en la cadena de software.",
+    "repo": "https://github.com/owasp-dep-scan/dep-scan",
+    "categories": [
+      "DevSecOps",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "sca",
+      "dependencies",
+      "sbom"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Syft",
+    "description": "Genera SBOM de imágenes de contenedor y sistemas de archivos en múltiples formatos.",
+    "repo": "https://github.com/anchore/syft",
+    "categories": [
+      "DevSecOps",
+      "Contenedores"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "sbom",
+      "containers",
+      "supply-chain"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Grype",
+    "description": "Escáner de vulnerabilidades para imágenes de contenedor, SBOM y sistemas de archivos.",
+    "repo": "https://github.com/anchore/grype",
+    "categories": [
+      "DevSecOps",
+      "Contenedores"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "vulnerability-scanner",
+      "sbom",
+      "containers"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "OSV-Scanner",
+    "description": "Busca vulnerabilidades conocidas en dependencias usando la base de datos OSV.",
+    "repo": "https://github.com/google/osv-scanner",
+    "categories": [
+      "DevSecOps",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "dependencies",
+      "vulnerabilities",
+      "supply-chain"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "OpenSSF Scorecard",
+    "description": "Evalúa señales de seguridad y buenas prácticas en proyectos de software abierto.",
+    "repo": "https://github.com/ossf/scorecard",
+    "categories": [
+      "DevSecOps",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "macOS"
+    ],
+    "tags": [
+      "supply-chain",
+      "oss",
+      "risk"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Sherlock",
+    "description": "Busca un nombre de usuario en cientos de redes sociales y servicios públicos.",
+    "repo": "https://github.com/sherlock-project/sherlock",
+    "categories": [
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "username",
+      "social-media",
+      "investigation"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Maigret",
+    "description": "Recopila perfiles públicos asociados a un alias en miles de sitios.",
+    "repo": "https://github.com/soxoj/maigret",
+    "categories": [
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "username",
+      "profiles",
+      "social-media"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "WhatsMyName",
+    "description": "Datos y herramientas para comprobar rápidamente la presencia de usuarios en servicios web.",
+    "repo": "https://github.com/WebBreacher/WhatsMyName",
+    "categories": [
+      "OSINT"
+    ],
+    "platforms": [
+      "Web"
+    ],
+    "tags": [
+      "username",
+      "enumeration",
+      "profiles"
+    ]
+  },
+  {
+    "name": "SpiderFoot",
+    "description": "Automatiza OSINT y mapea relaciones entre dominios, personas, infraestructura y amenazas.",
+    "repo": "https://github.com/smicallef/spiderfoot",
+    "categories": [
+      "OSINT",
+      "Reconocimiento"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "automation",
+      "investigation",
+      "attack-surface"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "GHunt",
+    "description": "Framework OSINT para investigar información pública vinculada al ecosistema de Google.",
+    "repo": "https://github.com/mxrch/GHunt",
+    "categories": [
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "google",
+      "investigation",
+      "accounts"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Blackbird",
+    "description": "Busca cuentas asociadas a un nombre de usuario en numerosas plataformas.",
+    "repo": "https://github.com/p1ngul1n0/blackbird",
+    "categories": [
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "username",
+      "accounts",
+      "social-media"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Social Analyzer",
+    "description": "Analiza y busca perfiles públicos de personas en múltiples redes sociales.",
+    "repo": "https://github.com/qeeqbox/social-analyzer",
+    "categories": [
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "social-media",
+      "profiles",
+      "investigation"
+    ],
+    "language": "JavaScript"
+  },
+  {
+    "name": "Signature Base",
+    "description": "Base abierta de firmas YARA y reglas IOC para detección y respuesta.",
+    "repo": "https://github.com/Neo23x0/signature-base",
+    "categories": [
+      "Threat Intelligence",
+      "Malware"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "yara",
+      "ioc",
+      "detection"
+    ]
+  },
+  {
+    "name": "AIL Framework",
+    "description": "Plataforma modular para analizar, correlacionar y compartir información de amenazas.",
+    "repo": "https://github.com/CIRCL/AIL-framework",
+    "categories": [
+      "Threat Intelligence",
+      "OSINT"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "threat-intel",
+      "correlation",
+      "information-sharing"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Timesketch",
+    "description": "Plataforma colaborativa para análisis forense de líneas temporales.",
+    "repo": "https://github.com/google/timesketch",
+    "categories": [
+      "Forense",
+      "Respuesta a Incidentes"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "timeline",
+      "dfir",
+      "collaboration"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Didier Stevens Suite",
+    "description": "Colección de utilidades para análisis de documentos, tráfico, archivos y artefactos sospechosos.",
+    "repo": "https://github.com/DidierStevens/DidierStevensSuite",
+    "categories": [
+      "Forense",
+      "Malware"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "documents",
+      "analysis",
+      "utilities"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "Firmware Analysis Toolkit",
+    "description": "Automatiza la extracción, emulación y análisis dinámico de firmware Linux.",
+    "repo": "https://github.com/attify/firmware-analysis-toolkit",
+    "categories": [
+      "Firmware",
+      "IoT"
+    ],
+    "platforms": [
+      "Linux"
+    ],
+    "tags": [
+      "firmware",
+      "emulation",
+      "iot"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "RouterSploit",
+    "description": "Framework para evaluar la seguridad de routers y otros dispositivos embebidos autorizados.",
+    "repo": "https://github.com/threat9/routersploit",
+    "categories": [
+      "Firmware",
+      "Explotación"
+    ],
+    "platforms": [
+      "Linux",
+      "macOS"
+    ],
+    "tags": [
+      "routers",
+      "iot",
+      "pentest"
+    ],
+    "language": "Python"
+  },
+  {
+    "name": "CloudFox",
+    "description": "Ayuda a identificar rutas de ataque y configuraciones de riesgo en entornos cloud.",
+    "repo": "https://github.com/BishopFox/cloudfox",
+    "categories": [
+      "Cloud",
+      "Auditoría"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "aws",
+      "azure",
+      "recon"
+    ],
+    "language": "Go"
+  },
+  {
+    "name": "Stratus Red Team",
+    "description": "Emula técnicas ofensivas en cloud de forma reproducible para validar detecciones.",
+    "repo": "https://github.com/DataDog/stratus-red-team",
+    "categories": [
+      "Cloud",
+      "Red Team"
+    ],
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "tags": [
+      "cloud",
+      "attack-emulation",
+      "detection"
+    ],
+    "language": "Go"
   }
 ]

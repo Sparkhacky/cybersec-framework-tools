@@ -3,68 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberSec Framework Tools</title>
+  <meta name="theme-color" content="#07110f" />
+  <meta name="description" content="Directorio curado de herramientas para OSINT, ciberseguridad, ciberinteligencia y hacking ético." />
+  <meta property="og:title" content="CyberSec Framework Tools" />
+  <meta property="og:description" content="Encuentra la herramienta adecuada para investigar, auditar y proteger." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://sparkhacky.github.io/cybersec-framework-tools/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CyberSec Framework Tools" />
+  <meta name="twitter:description" content="Encuentra la herramienta adecuada para investigar, auditar y proteger." />
+  <meta name="twitter:image" content="https://sparkhacky.github.io/cybersec-framework-tools/og.jpg" />
+  <title>CyberSec Framework Tools — Directorio de herramientas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="container">
-    <h1>CyberSec Framework Tools</h1>
-    <p class="subtitle">Encuentra rápido. Filtra suave. ⚖️</p>
-
-    <div class="controls">
-      <!-- Buscador con autocompletado -->
-      <input id="search" type="search" list="search-suggest"
-             placeholder="Buscar: nmap, phishing, privilege escalation..."
-             aria-label="Buscar"/>
-      <datalist id="search-suggest"></datalist>
-
-      <!-- Orden -->
-      <select id="sort" aria-label="Ordenar">
-        <option value="name-asc">Ordenar: Nombre (A→Z)</option>
-        <option value="name-desc">Ordenar: Nombre (Z→A)</option>
-        <option value="lang-asc">Lenguaje (A→Z)</option>
-      </select>
-
-      <!-- Solo favoritos -->
-      <label class="switch" title="Mostrar solo favoritos">
-        <input type="checkbox" id="onlyFavs" />
-        <span>Solo favoritos ⭐</span>
-      </label>
-
-      <!-- Vista tarjetas / lista -->
-      <div class="view-toggle" role="group" aria-label="Cambiar vista">
-        <button id="viewCards" class="is-active" type="button">Tarjetas</button>
-        <button id="viewList" type="button">Lista</button>
-      </div>
-
-      <!-- Limpiar -->
-      <button id="clearFilters" title="Limpiar filtros">Limpiar</button>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="CyberSec Framework Tools, inicio"><span class="brand-mark" aria-hidden="true">C<span>F</span></span><span>CYBERSEC<span class="brand-muted">/TOOLS</span></span></a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#catalogo">Explorar</a>
+        <a href="#acerca">Acerca de</a>
+        <a class="nav-github" href="https://github.com/sparkhacky/cybersec-framework-tools" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
     </div>
-
-    <!-- Chips (27 macros) -->
-    <details id="filtersPanel" class="filters-panel">
-  <summary>
-    <span id="filtersSummary">Filtros (0 activos)</span>
-  </summary>
-  <div id="filters" class="filters"></div>
-</details>
-
   </header>
-
-  <main class="container">
-    <div id="stats" class="stats"></div>
-    <section id="grid" class="grid"></section>
+  <main id="inicio">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Directorio abierto · uso responsable</p>
+        <h1 id="hero-title">Encuentra la herramienta.<br><span>Resuelve el reto.</span></h1>
+        <p class="hero-text">Un mapa curado y práctico para explorar herramientas de OSINT, ciberseguridad, ciberinteligencia y hacking ético sin perderte entre repositorios.</p>
+      </div>
+      <div class="hero-aside" aria-label="Resumen del catálogo">
+        <div class="metric"><strong id="totalTools">—</strong><span>herramientas</span></div>
+        <div class="metric"><strong id="totalAreas">—</strong><span>áreas clave</span></div>
+        <p>Selección revisada y organizada para profesionales, estudiantes e investigadores.</p>
+      </div>
+    </section>
+    <section class="search-shell container" aria-label="Buscar herramientas">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="search" type="search" list="search-suggest" placeholder="Busca por nombre, técnica o tecnología…" autocomplete="off" aria-label="Buscar herramientas" />
+        <kbd>/</kbd>
+        <datalist id="search-suggest"></datalist>
+      </div>
+      <p class="search-hint">Prueba con <button type="button" data-query="osint">OSINT</button>, <button type="button" data-query="active directory">Active Directory</button> o <button type="button" data-query="forense">Forense</button></p>
+    </section>
+    <section id="catalogo" class="catalog container" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div><p class="section-kicker">Explorar el arsenal</p><h2 id="catalog-title">Herramientas por especialidad</h2></div>
+        <p>Selecciona una o varias áreas. Los resultados combinan todos los filtros activos.</p>
+      </div>
+      <div id="filters" class="filters" role="group" aria-label="Filtrar por especialidad"></div>
+      <div class="catalog-toolbar">
+        <p id="stats" class="stats" aria-live="polite">Cargando catálogo…</p>
+        <div class="toolbar-actions">
+          <label class="select-wrap"><span class="sr-only">Ordenar resultados</span><select id="sort" aria-label="Ordenar resultados"><option value="name-asc">Nombre A–Z</option><option value="name-desc">Nombre Z–A</option><option value="lang-asc">Lenguaje A–Z</option></select></label>
+          <label class="favorite-filter"><input type="checkbox" id="onlyFavs" /><span aria-hidden="true">☆</span> Favoritos</label>
+          <div class="view-toggle" role="group" aria-label="Tipo de vista"><button id="viewCards" class="is-active" type="button" aria-label="Vista de tarjetas" aria-pressed="true">▦</button><button id="viewList" type="button" aria-label="Vista de lista" aria-pressed="false">☷</button></div>
+          <button id="clearFilters" class="clear-button" type="button">Limpiar</button>
+        </div>
+      </div>
+      <section id="grid" class="grid" aria-label="Resultados de herramientas"></section>
+      <div id="emptyState" class="empty-state" hidden><span aria-hidden="true">⌁</span><h3>No encontramos coincidencias</h3><p>Prueba con otra palabra o limpia los filtros activos.</p><button type="button" data-clear>Ver todas las herramientas</button></div>
+    </section>
+    <section id="acerca" class="ethics-section">
+      <div class="container ethics-grid">
+        <div><p class="section-kicker">Conocimiento con criterio</p><h2>Aprende. Investiga.<br>Protege.</h2></div>
+        <div class="ethics-copy"><p>Este directorio facilita el acceso a proyectos abiertos que ayudan a comprender sistemas, investigar amenazas y mejorar defensas.</p><p class="ethics-note"><span aria-hidden="true">!</span><strong>Úsalo siempre con autorización.</strong> El conocimiento técnico exige contexto, consentimiento y responsabilidad.</p></div>
+      </div>
+    </section>
   </main>
-
-  <footer class="container footer">
-    <p>Hecho con ☯︎ — Mantén el equilibrio entre conocimiento y ética.</p>
-    <p>
-      <a href="repos.json" target="_blank" rel="noopener">Ver datos (repos.json)</a> ·
-      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-    </p>
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand footer-brand"><span class="brand-mark" aria-hidden="true">C<span>F</span></span><span>CYBERSEC<span class="brand-muted">/TOOLS</span></span></div>
+      <p>Un proyecto abierto para una comunidad más preparada.</p>
+      <div class="footer-links"><a href="repos.json" target="_blank">Datos JSON</a><a href="#inicio">Volver arriba ↑</a></div>
+    </div>
   </footer>
-
-  <!-- Usa el app.js con macros + favoritos + lista que te pasé -->
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
